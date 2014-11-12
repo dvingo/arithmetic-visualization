@@ -18,7 +18,7 @@ In a separate terminal run the following to compile the sass files:
 grunt
 ```
 
-Open [localhost:10555](localhost:10555)
+Open [localhost:10555](http://localhost:10555)
 
 ## License
 
