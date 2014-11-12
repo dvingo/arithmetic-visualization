@@ -1,6 +1,8 @@
 # arithmetic-site-cljs
 
-This project is based off of [chestnut](https://github.com/plexus/chestnut).
+Playing around with d3, interfacing with ClojureScript for fun.
+
+This project was created as a [chestnut](https://github.com/plexus/chestnut) template.
 
 # Setup
 
