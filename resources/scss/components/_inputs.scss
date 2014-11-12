@@ -1,0 +1,21 @@
+.inputs {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  > .first-input {
+    margin-right: 20px;
+  }
+
+  > .operation-selector  {
+    margin-right: 20px;
+  }
+
+  > .second-input {
+    margin-right: 20px;
+  }
+
+  > button {
+  }
+}

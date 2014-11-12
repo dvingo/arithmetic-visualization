@@ -1,0 +1,20 @@
+.visualization {
+  .columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 100%;
+
+    > .one {
+      display: inline-block;
+      margin-left: 6%;
+      margin-right: 42%;
+    }
+    > .two {
+      display: inline-block;
+      margin-right: 25%;
+    }
+
+  }
+}

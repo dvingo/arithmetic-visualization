@@ -1,0 +1,77 @@
+@font-face {
+  font-family: 'exo_2.0regular';
+  src: url('fonts/Exo2.0-Regular-webfont.eot');
+  src: url('fonts/Exo2.0-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Exo2.0-Regular-webfont.woff') format('woff'), url('fonts/Exo2.0-Regular-webfont.ttf') format('truetype'), url('fonts/Exo2.0-Regular-webfont.svg#exo_2.0regular') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'exo_2.0bold';
+  src: url('fonts/Exo2.0-Bold-webfont.eot');
+  src: url('fonts/Exo2.0-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Exo2.0-Bold-webfont.woff') format('woff'), url('fonts/Exo2.0-Bold-webfont.ttf') format('truetype'), url('fonts/Exo2.0-Bold-webfont.svg#exo_2.0bold') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+/* line 1, /Users/dvingo/projects/personal/arithmetic-site-cljs/resources/scss/base */
+body {
+  font-family: "exo_2.0regular"; }
+
+/* line 1, /Users/dvingo/projects/personal/arithmetic-site-cljs/resources/scss/components/inputs */
+.inputs {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: flex-end; }
+  /* line 7, /Users/dvingo/projects/personal/arithmetic-site-cljs/resources/scss/components/inputs */
+  .inputs > .first-input {
+    margin-right: 20px; }
+  /* line 11, /Users/dvingo/projects/personal/arithmetic-site-cljs/resources/scss/components/inputs */
+  .inputs > .operation-selector {
+    margin-right: 20px; }
+  /* line 15, /Users/dvingo/projects/personal/arithmetic-site-cljs/resources/scss/components/inputs */
+  .inputs > .second-input {
+    margin-right: 20px; }
+
+/* line 2, /Users/dvingo/projects/personal/arithmetic-site-cljs/resources/scss/components/vis */
+.visualization .columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%; }
+  /* line 9, /Users/dvingo/projects/personal/arithmetic-site-cljs/resources/scss/components/vis */
+  .visualization .columns > .one {
+    display: inline-block;
+    margin-left: 6%;
+    margin-right: 42%; }
+  /* line 14, /Users/dvingo/projects/personal/arithmetic-site-cljs/resources/scss/components/vis */
+  .visualization .columns > .two {
+    display: inline-block;
+    margin-right: 25%; }
+
+/* line 5, /Users/dvingo/projects/personal/arithmetic-site-cljs/resources/scss/main.scss */
+body {
+  background: #fff; }
+
+/* line 9, /Users/dvingo/projects/personal/arithmetic-site-cljs/resources/scss/main.scss */
+.container {
+  width: 72%;
+  margin: 0 auto; }
+
+/* line 14, /Users/dvingo/projects/personal/arithmetic-site-cljs/resources/scss/main.scss */
+.head {
+  padding-bottom: 40px; }
+  /* line 17, /Users/dvingo/projects/personal/arithmetic-site-cljs/resources/scss/main.scss */
+  .head > h1 {
+    background: lemonchiffon; }
+  /* line 21, /Users/dvingo/projects/personal/arithmetic-site-cljs/resources/scss/main.scss */
+  .head > h3 {
+    font-family: 'exo_2.0bold'; }
+  /* line 24, /Users/dvingo/projects/personal/arithmetic-site-cljs/resources/scss/main.scss */
+  .head > h4 {
+    margin-left: 8em; }
+
+/* line 29, /Users/dvingo/projects/personal/arithmetic-site-cljs/resources/scss/main.scss */
+svg rect {
+  fill: lightblue; }
+
+/*# sourceMappingURL=main.css.map */

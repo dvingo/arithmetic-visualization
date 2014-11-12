@@ -1,0 +1,31 @@
+@import "fonts";
+@import "base";
+@import "components/inputs";
+@import "components/vis";
+body {
+  background: #fff;
+}
+
+.container {
+  width: 72%;
+  margin: 0 auto;
+}
+
+.head {
+  padding-bottom: 40px;
+
+  > h1 {
+    background: lemonchiffon;
+  }
+
+  > h3 {
+    font-family: 'exo_2.0bold';
+  }
+  > h4 {
+    margin-left: 8em;
+  }
+}
+
+svg rect {
+  fill: lightblue;
+}

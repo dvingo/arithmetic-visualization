@@ -1,0 +1,16 @@
+{
+  "name": "arithmetic-site-cljs",
+  "version": "0.0.1",
+  "description": "just to compile sass",
+  "repository": {
+    "type": "git",
+    "url": "todo"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^0.16.1",
+    "load-grunt-tasks": "^1.0.0",
+    "node-sass": "^1.2.2"
+  }
+}
