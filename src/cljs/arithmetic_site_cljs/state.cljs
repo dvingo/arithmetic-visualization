@@ -4,4 +4,4 @@
 (def app-state
   (atom { :first-number 0
          :second-number 0
-         :operation :+ }))
+         :operation "+" }))

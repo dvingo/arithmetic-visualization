@@ -1,23 +1,38 @@
 (ns arithmetic-site-cljs.core
   (:require [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
-            [arithmetic-site-cljs.state :as state]))
+            [arithmetic-site-cljs.state :as state])
+  (:use [arithmetic-site-cljs.draw :only [draw-rectangle]]))
 
 (enable-console-print!)
 
-(defn draw-vis [app-state]
-  (let [first-num (:first-number @app-state)]
-    (.log js/console "first num: ")
-    (.log js/console (js/Number first-num))
-    ))
+(defn l [x] (.log js/console x))
+(defn draw-vis [app-state svg-el]
+  (let [first-num (:first-number @app-state)
+        second-num (:second-number @app-state)
+        operator (:operator @app-state)
+        matrix-data (vec (map #(range 0 first-num) (range 0 second-num)))
+        svg-el (:svg-el @app-state)]
+    (l "SVG EL: ")
+    (l svg-el)
+    (l "Matrix data: ")
+    (l matrix-data)
+    (l "cljs->js Matrix data: ")
+    (l (clj->js matrix-data))
+    (draw-rectangle matrix-data svg-el)))
 
 (defn update-num-value [app-key new-val app-state]
   (om/update! app-state app-key new-val))
 
 (defn arithmetic-view [app owner]
   (reify
+    om/IDidMount
+    (did-mount [_]
+      (om/update! app :svg-el
+                  (-> js/d3 (.select "#vis-output") (.append "svg")
+                    (.attr "width" 800) (.attr "height" 800))))
     om/IRenderState
-    (render-state [_ state]
+    (render-state [_ _]
       (dom/div #js {:className "container"}
         (dom/header #js {:className "head"}
           (dom/h1 nil "Arithmetic")
