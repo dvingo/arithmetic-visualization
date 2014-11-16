@@ -2,23 +2,30 @@
   (:require [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
             [arithmetic-site-cljs.state :as state])
-  (:use [arithmetic-site-cljs.draw :only [draw-rectangle]]))
+  (:use [arithmetic-site-cljs.draw
+          :only [draw-number-line draw-rectangle]]
+        [arithmetic-site-cljs.util :only [l]]))
 
 (enable-console-print!)
 
-(defn l [x] (.log js/console x))
-(defn draw-vis [app-state svg-el]
+(defn draw-vis [app-state]
   (let [first-num (:first-number @app-state)
         second-num (:second-number @app-state)
         operator (:operator @app-state)
         matrix-data (vec (map #(range 0 first-num) (range 0 second-num)))
-        svg-el (:svg-el @app-state)]
-    (l "SVG EL: ")
-    (l svg-el)
+        svg-el (:svg-el @app-state)
+        first-el (-> js/d3 (.select ".one"))
+        second-el (-> js/d3 (.select ".two"))]
+    (l "First EL: ")
+    (l first-el)
+    (l "Second EL: ")
+    (l second-el)
     (l "Matrix data: ")
     (l matrix-data)
     (l "cljs->js Matrix data: ")
     (l (clj->js matrix-data))
+    (draw-number-line (range 0 first-num) first-el)
+    (draw-number-line (range 0 second-num) second-el)
     (draw-rectangle matrix-data svg-el)))
 
 (defn update-num-value [app-key new-val app-state]

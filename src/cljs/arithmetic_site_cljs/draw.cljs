@@ -1,7 +1,7 @@
 (ns arithmetic-site-cljs.draw
-  (:require [clojure.string :as string]))
+  (:require [clojure.string :as string])
+  (:use [arithmetic-site-cljs.util :only [l]]))
 
-(defn l [x] (.log js/console x))
 (defn draw-rectangle [matrix-data parent-el]
   (let [columns (-> parent-el
                   (.selectAll ".top")
@@ -38,3 +38,23 @@
 
       (-> columns (.exit) (.remove))
       (-> nested (.exit) (.remove)))))
+
+(defn draw-number-line [data parent-el]
+  (let [data (clj->js data)
+        line (-> parent-el
+               (.selectAll "div")
+               (.data data))]
+  (-> line .enter (.append "div")
+    (.style "width" "20px")
+    (.style "opacity" "0")
+    (.style "background-color" "lightcyan")
+    (.style "border" "1px solid black")
+    (.text (fn [d] d)))
+
+  (-> line .transition (.style "opacity" "1"))
+
+  (-> line .exit
+    .transition
+      (.duration 700)
+      (.style "opacity" "0")
+      remove)))
